@@ -3,9 +3,15 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
+import requests
+
+url = "https://drive.google.com/file/d/1kUmbEE_u0qmaWWxzG8tchc9b7XmeVis5/view?usp=drive_link"
+r = requests.get(url)
+with open("house_model.pkl", "wb") as f:
+    f.write(r.content)
 
 # Load model components
-model = joblib.load("models/house_model.pkl")
+model = joblib.load("house_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
 feature_names = joblib.load("models/feature_names.pkl")
 
