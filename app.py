@@ -3,17 +3,11 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
-import requests
-
-url = "https://drive.google.com/file/d/1kUmbEE_u0qmaWWxzG8tchc9b7XmeVis5/view?usp=drive_link"
-r = requests.get(url)
-with open("house_model.pkl", "wb") as f:
-    f.write(r.content)
 
 # Load model components
 model = joblib.load("house_model.pkl")
-scaler = joblib.load("models/scaler.pkl")
-feature_names = joblib.load("models/feature_names.pkl")
+scaler = joblib.load("scaler.pkl")
+feature_names = joblib.load("feature_names.pkl")
 
 st.set_page_config(page_title="🏠 House Price Predictor", layout="centered")
 
