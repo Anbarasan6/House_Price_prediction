@@ -5,9 +5,9 @@ import pandas as pd
 import joblib
 
 # Load model components
-model = joblib.load("house_model.pkl")
-scaler = joblib.load("scaler.pkl")
-feature_names = joblib.load("feature_names.pkl")
+model = joblib.load("models/house_model.pkl")
+scaler = joblib.load("models/scaler.pkl")
+feature_names = joblib.load("models/feature_names.pkl")
 
 st.set_page_config(page_title="🏠 House Price Predictor", layout="centered")
 
